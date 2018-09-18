@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>VS</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <p>message: {{ message }}</p>
+                <p>count: {{ count }}</p>
+                <p>list.length: {{ list.length }}</p>
+                <p>list[2]: {{ list[2] }}</p>
+                <p>model.prop1: {{ model.prop1 }}</p>
+                <p>model.prop2: {{ model.prop2 }}</p>
+                <p>model.prop2.child: {{ model.prop2.child }}</p>
+            </div>
+            <div>
+                <transition>
+                    <p v-if="show">Show!?</p>
+                </transition>
+            </div>
+            <ol>
+                <li v-for="item in list">{{ item }}</li>
+            </ol>
+            <div>
+                <button v-on:click="handleClick">Click</button>
+            </div>
+            <div>
+                <button v-on:click="show=!show">Transition</button>
+            </div>
+            <div>
+                <input v-model="message" />
+            </div>
+            <div>
+                <input v-model.number="count" />
+            </div>
+            <div>
+                <pre>{{ $data }}</pre>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
